@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  
+  /* RevCryl Brand Colors */
+  --revcryl-blue: #2563eb;
+  --revcryl-green: #16a34a;
+  --revcryl-orange: #ea580c;
+  --revcryl-dark-blue: #1d4ed8;
+  --revcryl-light-blue: #3b82f6;
+  --revcryl-dark-green: #15803d;
+  --revcryl-light-green: #22c55e;
+  --revcryl-dark-orange: #c2410c;
+  --revcryl-light-orange: #f97316;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* Custom RevCryl colors */
+  --color-revcryl-blue: var(--revcryl-blue);
+  --color-revcryl-green: var(--revcryl-green);
+  --color-revcryl-orange: var(--revcryl-orange);
+  --color-revcryl-dark-blue: var(--revcryl-dark-blue);
+  --color-revcryl-light-blue: var(--revcryl-light-blue);
+  --color-revcryl-dark-green: var(--revcryl-dark-green);
+  --color-revcryl-light-green: var(--revcryl-light-green);
+  --color-revcryl-dark-orange: var(--revcryl-dark-orange);
+  --color-revcryl-light-orange: var(--revcryl-light-orange);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--revcryl-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--revcryl-dark-blue);
+}
+
+/* Fixed WhatsApp button styles */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Hero animations */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 1s ease-out 0.3s both;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 8s ease-in-out infinite 2s;
+}
